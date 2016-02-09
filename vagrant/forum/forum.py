@@ -72,7 +72,7 @@ def Post(env, resp):
     # If length is zero, post is empty - don't save it.
     if length > 0:
         postdata = input.read(length)
-        fields = urllib.parse.prase_qs(postdata)
+        fields = cgi.parse_qs(postdata)
         content = fields['content'][0]
         # If the post is just whitespace, don't save it.
         content = content.strip()

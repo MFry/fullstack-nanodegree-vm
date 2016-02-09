@@ -4,7 +4,7 @@
 
 import time
 import psycopg2
-
+# http://www.bentedder.com/use-pgadmin-access-postgres-database-within-vagrant-box/
 # Database connection
 try:
     # "postgresql://vagrant:vagrant@localhost/forum"
