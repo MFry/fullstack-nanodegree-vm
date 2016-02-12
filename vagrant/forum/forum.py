@@ -7,7 +7,6 @@ import forumdb
 
 # Other modules used to run a web server.
 import cgi
-import urllib
 from wsgiref.simple_server import make_server
 from wsgiref import util
 

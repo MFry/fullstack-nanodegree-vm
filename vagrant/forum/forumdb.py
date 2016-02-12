@@ -15,6 +15,7 @@ except psycopg2.Error as e:
 cur = conn.cursor()
 DB = []
 
+
 # Get posts from database.
 def GetAllPosts():
     """Get all the posts from the database, sorted with the newest first.
