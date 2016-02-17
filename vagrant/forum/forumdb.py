@@ -26,13 +26,11 @@ def GetAllPosts():
       it was posted.
     """
     print('Connecting')
-    cur.execute('''
-     SELECT * FROM posts
-     ''')
+    cur.execute('SELECT * FROM posts;')
     DB = cur.fetchall()
     print(DB)
     posts = [{'content': str(row[1]), 'time': str(row[0])} for row in DB]
-    posts.sort(key=lambda row: row['time'], reverse=True)
+    posts.sort(key=lambda row: row['time'], reverse=False)
     return posts
 
 
@@ -43,12 +41,11 @@ def AddPost(content):
     Args:
       content: The text content of the new post.
     """
-    insert_format = 'INSERT INTO posts VALUE {}'
-    cur.execute(insert_format.format(content))
-    cur.commit()
+    cur.execute('INSERT INTO posts VALUES (%s);', (content,))
+    conn.commit()
 
 
 print('Calling function')
 GetAllPosts()
 
-conn.close()
+# conn.close()
