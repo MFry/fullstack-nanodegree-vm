@@ -10,7 +10,7 @@ import cgi
 from wsgiref.simple_server import make_server
 from wsgiref import util
 
-# HTML template for the forum page
+# HTML template for the forum vagrant ssh
 HTML_WRAP = '''\
 <!DOCTYPE html>
 <html>
